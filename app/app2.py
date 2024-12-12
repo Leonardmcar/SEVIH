@@ -83,7 +83,7 @@ def analyze_and_save_to_json(data):
     }
 
     # Guardar en un nuevo archivo JSON
-    with open("salida/maestroLesiones.json", "w") as json_file:
+    with open("./salida/maestroLesiones.json", "w") as json_file:
         json.dump(result, json_file, indent=4, ensure_ascii=False)
 
     print("Datos guardados en maestroLesiones.json")

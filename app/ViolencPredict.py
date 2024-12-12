@@ -66,7 +66,7 @@ def predict_time_series(data):
         print(f"Error al predecir: {e}")
         return 0
 
-def save_predictions(predictions, file_path="salida/maestroPredictViolencia.json"):
+def save_predictions(predictions, file_path="./salida/maestroPredictViolencia.json"):
     with open(file_path, "w") as file:
         json.dump(predictions, file, indent=4, ensure_ascii=False)
     print(f"Predicciones guardadas en {file_path}")
