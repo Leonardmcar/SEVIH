@@ -113,4 +113,4 @@ def analyze_and_save_to_json(data):
 data = load_data_from_postgres()
 analyze_and_save_to_json(data)
 
-subprocess.run(["python", "AgrupPredict.py"])
+subprocess.run(["python", "app2.py"])

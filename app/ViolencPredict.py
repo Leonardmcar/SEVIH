@@ -1,6 +1,7 @@
 import json
 from statsmodels.tsa.arima.model import ARIMA
 from datetime import datetime
+import subprocess
 
 def load_violence_json(file_path="maestro.json"):
     with open(file_path, "r") as file:
@@ -75,3 +76,5 @@ current_year = datetime.now().year
 data = load_violence_json()
 predictions = predict_next_year(data, current_year)
 save_predictions(predictions)
+
+subprocess.run(["python", "AgrupPredict.py"])

@@ -91,3 +91,5 @@ def analyze_and_save_to_json(data):
 # Ejecutar el análisis
 data = load_data_from_postgres()
 analyze_and_save_to_json(data)
+
+subprocess.run(["python", "ViolencPredict.py"])
