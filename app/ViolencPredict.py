@@ -3,7 +3,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from datetime import datetime
 import subprocess
 
-def load_violence_json(file_path="maestro.json"):
+def load_violence_json(file_path="salida/maestro.json"):
     with open(file_path, "r") as file:
         data = json.load(file)
     return data
@@ -66,7 +66,7 @@ def predict_time_series(data):
         print(f"Error al predecir: {e}")
         return 0
 
-def save_predictions(predictions, file_path="maestroPredictViolencia.json"):
+def save_predictions(predictions, file_path="salida/maestroPredictViolencia.json"):
     with open(file_path, "w") as file:
         json.dump(predictions, file, indent=4, ensure_ascii=False)
     print(f"Predicciones guardadas en {file_path}")

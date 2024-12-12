@@ -17,3 +17,13 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - ./app:/app
+  nginx:
+    restart: always
+    image: nginx:1-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./salida/:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+    - app

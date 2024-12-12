@@ -27,7 +27,7 @@ def load_data_from_postgres():
         print(grouped_data)
 
         # Guardar los datos agrupados en un archivo JSON
-        grouped_data.to_json('datosAgrupados.json', orient='records')
+        grouped_data.to_json('salida/datosAgrupados.json', orient='records')
 
         return grouped_data
     except Exception as e:
@@ -81,7 +81,7 @@ def forecast_next_year(data):
         forecast_list.extend(forecast_df.to_dict(orient='records'))
 
     # Guardar las predicciones en un archivo JSON
-    with open('predicciones.json', 'w') as f:
+    with open('salida/predicciones.json', 'w') as f:
         json.dump(forecast_list, f, ensure_ascii=False, indent=4)
 
     print(f"Predicciones para el año {next_year} guardadas en predicciones.json")
