@@ -1,1 +1,6 @@
 .env
+datosAgrupados.json
+maestro.json
+maestroLesiones.json
+maestroPredictViolencia.json
+predicciones.json

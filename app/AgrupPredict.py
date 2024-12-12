@@ -23,6 +23,10 @@ def load_data_from_postgres():
         # Agrupar datos por año, mes y género
         grouped_data = data.groupby(['año', 'mes', 'sexo_des']).size().reset_index(name='total')
 
+        # Limitar los datos agrupados a los últimos 2 años más el último año registrado
+        max_year = grouped_data['año'].max()
+        filtered_years = [max_year - 2, max_year - 1, max_year]  # Últimos 2 años + año actual
+        grouped_data = grouped_data[grouped_data['año'].isin(filtered_years)]
 
         print(grouped_data)
 
