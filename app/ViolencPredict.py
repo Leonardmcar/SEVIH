@@ -71,7 +71,7 @@ def save_predictions(predictions, file_path="maestroPredictViolencia.json"):
         json.dump(predictions, file, indent=4, ensure_ascii=False)
     print(f"Predicciones guardadas en {file_path}")
 
-# Ejecutar predicciones
+# Ejecutar las predicciones
 current_year = datetime.now().year
 data = load_violence_json()
 predictions = predict_next_year(data, current_year)
