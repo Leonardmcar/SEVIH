@@ -24,7 +24,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./salida/:/var/www/html
+      - ./salida/:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/sites-available/
     depends_on:
     - app
